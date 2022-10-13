@@ -227,7 +227,6 @@ atril
 geany
 geany-plugins
 leafpad
-vim
 neovim
 
 ## Fonts -----
@@ -273,7 +272,6 @@ yad
 ## Utilities -----
 aspell-fr
 baobab
-bashtop
 catfish
 fortune-mod
 gpick
@@ -353,7 +351,6 @@ networkmanager-dmenu-git
 obmenu-generator
 perl-linux-desktopfiles
 picom-ibhagwan-git
-timeshift
 toilet
 tty-clock
 unimatrix-git
