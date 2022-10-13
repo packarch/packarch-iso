@@ -1,0 +1,8 @@
+#
+# This file is parsed by pam_env module
+#
+# Syntax: simple "KEY=VAL" pairs on separate lines
+#
+QT_QPA_PLATFORMTHEME=qt5ct
+PATH="/usr/share/packarch/scripts"
+LANG=fr_FR.UTF-8
