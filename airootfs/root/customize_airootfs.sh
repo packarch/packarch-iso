@@ -81,14 +81,14 @@ if [[ ! -d "$rdir" ]]; then
 	mkdir "$rdir"
 fi
 
-rconfig=(alacritty geany gtk-3.0 Kvantum leafpad libfm neofetch nvim pcmanfm qt5ct ranger Thunar xfce4)
+rconfig=(alacritty geany gtk-3.0 Kvantum leafpad libfm neofetch pcmanfm qt5ct Thunar xfce4)
 for cfg in "${rconfig[@]}"; do
 	if [[ -e "$sdir/.config/$cfg" ]]; then
 		cp -rf "$sdir"/.config/"$cfg" "$rdir"
 	fi
 done
 
-rcfg=('.local' '.oh-my-zsh' '.gtkrc-2.0' '.vim_runtime' '.vimrc' '.zshrc')
+rcfg=('.local' '.oh-my-zsh' '.gtkrc-2.0' '.zshrc')
 for cfile in "${rcfg[@]}"; do
 	if [[ -e "$sdir/$cfile" ]]; then
 		cp -rf "$sdir"/"$cfile" /root

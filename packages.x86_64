@@ -7,7 +7,6 @@ b43-fwcutter
 base
 bind-tools
 brltty
-broadcom-wl
 btrfs-progs
 clonezilla
 cloud-init
@@ -104,7 +103,6 @@ udftools
 usb_modeswitch
 usbmuxd
 usbutils
-vim
 vpnc
 wireless-regdb
 wireless_tools
@@ -183,10 +181,7 @@ pulseaudio-alsa
 pulseaudio-equalizer-ladspa
 
 ## Files -----
-ranger
 highlight
-trash-cli
-ueberzug
 pcmanfm
 zip
 p7zip
@@ -227,7 +222,6 @@ atril
 geany
 geany-plugins
 leafpad
-neovim
 
 ## Fonts -----
 noto-fonts
@@ -271,7 +265,6 @@ yad
 
 ## Utilities -----
 aspell-fr
-baobab
 catfish
 fortune-mod
 gpick
@@ -279,9 +272,7 @@ htop
 keepassxc
 lxappearance
 meld
-ncdu
 nitrogen
-python-pywal
 rofi
 maim
 slop
@@ -324,8 +315,6 @@ packarch-wallpapers
 packarch-fonts
 packarch-skel
 packarch-music
-packarch-nvim
-packarch-vim
 packarch-omz
 packarch-scripts
 packarch-pixmaps
