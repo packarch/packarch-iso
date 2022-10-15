@@ -318,6 +318,7 @@ packarch-music
 packarch-omz
 packarch-scripts
 packarch-pixmaps
+packarch-rmatrix
 packarch-artworks
 packarch-about
 packarch-help
@@ -342,6 +343,5 @@ perl-linux-desktopfiles
 picom-ibhagwan-git
 toilet
 tty-clock
-unimatrix-git
 xfce-polkit
 yay
