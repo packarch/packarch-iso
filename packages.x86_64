@@ -326,6 +326,7 @@ packarch-welcome
 packarch-hooks
 packarch-installer
 packarch-install-scripts
+packarch-neofetch
 
 packarch-mirrorlist
 
