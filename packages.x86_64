@@ -331,6 +331,7 @@ packarch-neofetch
 packarch-mirrorlist
 
 ##-------- AUR Packages -------------##
+autofs
 betterlockscreen
 cava
 colorpicker
