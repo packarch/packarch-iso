@@ -74,10 +74,11 @@ cat >> "/etc/pacman.conf" <<- EOL
 	#Server = file:///home/custompkgs
 EOL
 
-## Append nfs share to autofs
-cat >> "/etc/autofs/auto.master" <<- EOL
-	/mnt /etc/auto.nfs --ghost,--timeout=60
-EOL
+## -------------------------------------------------------------- ##
+## Add syno nfs share to autofs
+sed -i -e 's|/misc.*|/mnt /etc/auto.nfs --ghost,--timeout=60|g' /etc/autofs/auto.master
+systemctl enable autofs
+## -------------------------------------------------------------- ##
 
 ## Copy Few Configs Into Root Dir
 rdir="/root/.config"
@@ -109,8 +110,6 @@ cat >> "/etc/skel/.config/openbox/autostart" <<- EOL
 	help-and-tips &
 	sed -i -e '/## Help-App-Run-Once/Q' "\$HOME"/.config/openbox/autostart
 EOL
-
-systemctl enable autofs
 
 ## -------------------------------------------------------------- ##
 
