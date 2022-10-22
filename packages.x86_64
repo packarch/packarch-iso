@@ -327,10 +327,13 @@ packarch-hooks
 packarch-installer
 packarch-install-scripts
 packarch-neofetch
+packarch-bspwm
 
 packarch-mirrorlist
 
 ##-------- AUR Packages -------------##
+numix-icon-theme-git
+numix-folders-git
 autofs
 betterlockscreen
 cava

@@ -13,6 +13,9 @@ locale-gen
 # France, Paris timezone
 ln -sf /usr/share/zoneinfo/Europe/Paris /etc/localtime
 
+# No password for members of wheel
+echo "%wheel ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
+
 ## Fix Initrd Generation in Installed System
 cat > "/etc/mkinitcpio.d/linux.preset" <<- _EOF_
 	# mkinitcpio preset file for the 'linux' package
