@@ -332,8 +332,12 @@ packarch-bspwm
 packarch-mirrorlist
 
 ##-------- AUR Packages -------------##
-numix-icon-theme-git
-numix-folders-git
+azote
+eww-git
+catppuccin-gtk-theme-frappe
+catppuccin-gtk-theme-macchiato
+catppuccin-gtk-theme-mocha
+papirus-folders-catppuccin-git
 autofs
 betterlockscreen
 cava
