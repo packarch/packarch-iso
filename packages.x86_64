@@ -328,7 +328,6 @@ packarch-hooks
 packarch-installer
 packarch-install-scripts
 packarch-neofetch
-packarch-bspwm
 
 packarch-mirrorlist
 
