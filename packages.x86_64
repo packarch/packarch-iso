@@ -332,8 +332,6 @@ packarch-neofetch
 packarch-mirrorlist
 
 ##-------- AUR Packages -------------##
-azote
-eww-git
 catppuccin-gtk-theme-frappe
 catppuccin-gtk-theme-macchiato
 catppuccin-gtk-theme-mocha
