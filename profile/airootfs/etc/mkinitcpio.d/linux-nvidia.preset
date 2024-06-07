@@ -1,0 +1,8 @@
+# mkinitcpio preset file for the 'linux' package on archiso (nvidia)
+
+PRESETS=('nvidia')
+
+ALL_kver='/boot/vmlinuz-linux'
+nvidia_config='/etc/mkinitcpio.conf.d/archiso-nvidia.conf'
+
+nvidia_image="/boot/initramfs-linux-nvidia.img"
