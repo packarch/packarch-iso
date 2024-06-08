@@ -1,0 +1,2 @@
+Partage  -fstype=nfs,rw  192.168.1.96:/volume1/Partage
+Photos  -fstype=nfs,rw  192.168.1.96:/volume1/Photos

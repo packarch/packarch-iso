@@ -119,10 +119,8 @@ udftools
 usb_modeswitch
 usbmuxd
 usbutils
-vim
 #virtualbox-guest-utils-nox
 vpnc
-wezterm-terminfo
 wireless-regdb
 wireless_tools
 wpa_supplicant
@@ -248,8 +246,8 @@ kvantum
 kvantum-qt5
 
 ## Display Manager ------------------------------
-sddm-git
-packarch-sddm-theme
+lightdm
+lightdm-gtk-greeter
 
 ## Desktop ------------------------------
 
@@ -315,6 +313,7 @@ yad
 packarch-openbox-premium
 
 # Packarch Packages
+packarch-rmatrix
 packarch-cursors
 packarch-icons
 packarch-themes
@@ -324,16 +323,12 @@ packarch-about
 packarch-artworks
 packarch-dunst-icons
 packarch-funscripts
-packarch-help
 packarch-neofetch
-packarch-welcome
 packarch-music
 packarch-omz
 packarch-arandr
 packarch-randr
 packarch-scripts
-packarch-ranger
-packarch-vim
 packarch-config-geany
 packarch-config-music
 packarch-config-qt
@@ -360,6 +355,7 @@ libavif
 libheif
 
 ## Files
+autofs
 gvfs
 gvfs-mtp
 gvfs-afc
@@ -367,8 +363,6 @@ gvfs-gphoto2
 gvfs-smb
 gvfs-google
 highlight
-trash-cli
-ueberzug
 xdg-user-dirs
 xdg-user-dirs-gtk
 
@@ -405,16 +399,12 @@ gcc
 htop
 nethogs
 ncdu
-powertop
-ranger
-vim
 
 ## AUR Packages
 betterlockscreen
 downgrade
 gtk3-nocsd-git
 i3lock-color
-ksuperkey
 mkinitcpio-firmware
 networkmanager-dmenu-git
 obmenu-generator

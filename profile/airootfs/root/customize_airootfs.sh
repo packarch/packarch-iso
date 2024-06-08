@@ -5,6 +5,12 @@
 set -e -u
 
 ## -------------------------------------------------------------- ##
+# fr_FR.UTF-8 locales
+sed -i 's/#\(fr_FR\.UTF-8\)/\1/' /etc/locale.gen
+locale-gen
+
+# France, Paris timezone
+ln -sf /usr/share/zoneinfo/Europe/Paris /etc/localtime
 
 ## Modify /etc/mkinitcpio.conf file
 sed -i '/etc/mkinitcpio.conf' \
@@ -74,6 +80,22 @@ cat >> "/etc/pacman.conf" <<- EOL
 EOL
 
 ## -------------------------------------------------------------- ##
+## Add syno nfs share to autofs
+sed -i -e 's|/misc.*|/mnt /etc/auto.nfs --ghost,--timeout=60|g' /etc/autofs/auto.master
+systemctl enable autofs
+
+## -------------------------------------------------------------- ##
+
+## Enable lightdm
+gpasswd -a liveuser autologin
+sed -i -e 's|#autologin-user=*|autologin-user=liveuser|g' /etc/lightdm/lightdm.conf
+sed -i -e 's|#autologin-user-timeout=*|autologin-user-timeout=0|g' /etc/lightdm/lightdm.conf
+sed -i -e 's|#user-session=*|user-session=openbox|g' /etc/lightdm/lightdm.conf
+sed -i -e 's|#greeter-session=*|greeter-session=lightdm-gtk-greeter|g' /etc/lightdm/lightdm.conf
+sed -i -e 's|#theme-name=*|theme-name=Juno-mirage|g' /etc/lightdm/lightdm-gtk-greeter.conf
+systemctl enable lightdm.service
+
+sed -i -e '/#\[core-testing\]/Q' /etc/pacman.conf
 
 ## Set zsh as default shell for new user
 sed -i -e 's#SHELL=.*#SHELL=/bin/zsh#g' /etc/default/useradd
@@ -87,36 +109,19 @@ if [[ ! -d "$rdir" ]]; then
 	mkdir "$rdir"
 fi
 
-rconfig=(geany gtk-3.0 Kvantum neofetch qt5ct qt6ct ranger Thunar xfce4)
+rconfig=(geany gtk-3.0 Kvantum neofetch qt5ct qt6ct Thunar xfce4)
 for cfg in "${rconfig[@]}"; do
 	if [[ -e "$sdir/.config/$cfg" ]]; then
 		cp -rf "$sdir"/.config/"$cfg" "$rdir"
 	fi
 done
 
-rcfg=('.gtkrc-2.0' '.oh-my-zsh' '.vim_runtime' '.vimrc' '.zshrc')
+rcfg=('.gtkrc-2.0' '.oh-my-zsh' '.zshrc')
 for cfile in "${rcfg[@]}"; do
 	if [[ -e "$sdir/$cfile" ]]; then
 		cp -rf "$sdir"/"$cfile" /root
 	fi
 done
-
-## -------------------------------------------------------------- ##
-
-## Don't launch welcome app on installed system, launch Help instead
-sed -i -e '/## Welcome-App-Run-Once/Q' /etc/skel/.config/openbox/autostart
-cat >> "/etc/skel/.config/openbox/autostart" <<- EOL
-	## Help-App-Run-Once
-	packarch-help &
-	sed -i -e '/## Help-App-Run-Once/Q' "\$HOME"/.config/openbox/autostart
-EOL
-
-sed -i -e '/## Welcome-App-Run-Once/Q' /etc/skel/.config/bspwm/bspwmrc
-cat >> "/etc/skel/.config/bspwm/bspwmrc" <<- EOL
-	## Help-App-Run-Once
-	packarch-help &
-	sed -i -e '/## Help-App-Run-Once/Q' "\$HOME"/.config/bspwm/bspwmrc
-EOL
 
 ## -------------------------------------------------------------- ##
 

@@ -7,6 +7,7 @@ QT_QPA_PLATFORMTHEME=qt6ct
 EDITOR=nano
 BROWSER=firefox
 TERMINAL=alacritty
+LANG=fr_FR.UTF-8
 PATH="/usr/share/packarch/scripts"
 
 # uncomment only if cursor is not visible in wayland sessions
