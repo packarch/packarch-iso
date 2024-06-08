@@ -88,11 +88,12 @@ systemctl enable autofs
 
 ## Enable lightdm
 gpasswd -a liveuser autologin
-sed -i -e 's|#autologin-user=*|autologin-user=liveuser|g' /etc/lightdm/lightdm.conf
-sed -i -e 's|#autologin-user-timeout=*|autologin-user-timeout=0|g' /etc/lightdm/lightdm.conf
-sed -i -e 's|#user-session=*|user-session=openbox|g' /etc/lightdm/lightdm.conf
-sed -i -e 's|#greeter-session=*|greeter-session=lightdm-gtk-greeter|g' /etc/lightdm/lightdm.conf
-sed -i -e 's|#theme-name=*|theme-name=Juno-mirage|g' /etc/lightdm/lightdm-gtk-greeter.conf
+sed -i -e 's|#autologin-user=|autologin-user=liveuser|g'           /etc/lightdm/lightdm.conf
+sed -i -e 's|#autologin-user-timeout=0|autologin-user-timeout=0|g' /etc/lightdm/lightdm.conf
+
+sed -i -e 's|user-session=default|user-session=openbox|g' /etc/lightdm/lightdm.conf
+sed -i -e 's|#greeter-session=example-gtk-gnome|greeter-session=lightdm-gtk-greeter|g' /etc/lightdm/lightdm.conf
+sed -i -e 's|#theme-name=|theme-name=Juno-mirage|g' /etc/lightdm/lightdm-gtk-greeter.conf
 systemctl enable lightdm.service
 
 sed -i -e '/#\[core-testing\]/Q' /etc/pacman.conf
