@@ -267,6 +267,9 @@ viewnior
 atril
 
 # Media
+smplayer
+smplayer-skins
+smplayer-themes
 mpc
 mpd
 ncmpcpp
@@ -283,6 +286,7 @@ gnome-keyring
 inetutils
 inotify-tools
 jq
+keepassxc
 light
 meld
 nitrogen
