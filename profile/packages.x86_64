@@ -328,6 +328,7 @@ packarch-arandr
 packarch-randr
 packarch-scripts
 packarch-config-geany
+packarch-config-smplayer
 packarch-config-music
 packarch-config-qt
 packarch-hooks-extra
