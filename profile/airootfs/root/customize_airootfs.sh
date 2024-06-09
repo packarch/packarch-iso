@@ -35,10 +35,26 @@ cat > "/etc/mkinitcpio.d/linux.preset" <<- _EOF_
 	fallback_options="-S autodetect"    
 _EOF_
 
-
-
 ## -------------------------------------------------------------- ##
 
+## Enable Parallel Downloads
+sed -i -e 's|#ParallelDownloads.*|ParallelDownloads = 5|g' /etc/pacman.conf
+sed -i -e '/#\[core-testing\]/Q' /etc/pacman.conf
+
+## Append packarch repository to pacman.conf
+cat >> "/etc/pacman.conf" <<- EOL
+	[packarch]
+	SigLevel = Optional TrustAll
+	Include = /etc/pacman.d/packarch-mirrorlist
+
+	[core]
+	Include = /etc/pacman.d/mirrorlist
+
+	[extra]
+	Include = /etc/pacman.d/mirrorlist
+EOL
+
+## -------------------------------------------------------------- ##
 
 ## Delete ISO specific init files
 rm -rf /etc/mkinitcpio.conf.d
@@ -60,8 +76,6 @@ sed -i -e 's|user-session=default|user-session=openbox|g' /etc/lightdm/lightdm.c
 sed -i -e 's|#greeter-session=example-gtk-gnome|greeter-session=lightdm-gtk-greeter|g' /etc/lightdm/lightdm.conf
 sed -i -e 's|#theme-name=|theme-name=Juno-mirage|g' /etc/lightdm/lightdm-gtk-greeter.conf
 systemctl enable lightdm.service
-
-sed -i -e '/#\[core-testing\]/Q' /etc/pacman.conf
 
 ## Set zsh as default shell for new user
 sed -i -e 's#SHELL=.*#SHELL=/bin/zsh#g' /etc/default/useradd
