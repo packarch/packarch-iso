@@ -4,6 +4,7 @@ amd-ucode
 arch-install-scripts
 archinstall
 b43-fwcutter
+packarch/pacman
 base
 bcachefs-tools
 bind

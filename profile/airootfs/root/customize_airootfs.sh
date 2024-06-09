@@ -35,54 +35,19 @@ cat > "/etc/mkinitcpio.d/linux.preset" <<- _EOF_
 	fallback_options="-S autodetect"    
 _EOF_
 
+
+
+## -------------------------------------------------------------- ##
+
+
 ## Delete ISO specific init files
 rm -rf /etc/mkinitcpio.conf.d
 rm -rf /etc/mkinitcpio.d/linux-nvidia.preset
 
 ## -------------------------------------------------------------- ##
-
-## Enable Parallel Downloads
-sed -i -e 's|#ParallelDownloads.*|ParallelDownloads = 5|g' /etc/pacman.conf
-sed -i -e '/#\[core-testing\]/Q' /etc/pacman.conf
-
-## Append packarch repository to pacman.conf
-cat >> "/etc/pacman.conf" <<- EOL
-	[packarch]
-	SigLevel = Optional TrustAll
-	Include = /etc/pacman.d/packarch-mirrorlist
-
-	#[core-testing]
-	#Include = /etc/pacman.d/mirrorlist
-
-	[core]
-	Include = /etc/pacman.d/mirrorlist
-
-	#[extra-testing]
-	#Include = /etc/pacman.d/mirrorlist
-
-	[extra]
-	Include = /etc/pacman.d/mirrorlist
-
-	# If you want to run 32 bit applications on your x86_64 system,
-	# enable the multilib repositories as required here.
-
-	#[multilib-testing]
-	#Include = /etc/pacman.d/mirrorlist
-
-	#[multilib]
-	#Include = /etc/pacman.d/mirrorlist
-
-	# An example of a custom package repository.  See the pacman manpage for
-	# tips on creating your own repositories.
-	#[custom]
-	#SigLevel = Optional TrustAll
-	#Server = file:///home/custompkgs
-EOL
-
-## -------------------------------------------------------------- ##
 ## Add syno nfs share to autofs
 sed -i -e 's|/misc.*|/mnt /etc/auto.nfs --ghost,--timeout=60|g' /etc/autofs/auto.master
-systemctl enable autofs
+systemctl enable autofs.service
 
 ## -------------------------------------------------------------- ##
 
@@ -162,4 +127,5 @@ for app in "${apps[@]}"; do
 	fi
 done
 
-## -------------------------------------------------------------- ##
+
+
