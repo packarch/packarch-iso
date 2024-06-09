@@ -158,7 +158,7 @@ _cleanup_pacstrap_dir() {
     [[ -d "${pacstrap_dir}/var/lib/pacman" ]] && find "${pacstrap_dir}/var/lib/pacman" -maxdepth 1 -type f -delete
 
     # Delete pacman database sync cache
-    # Archcraft Change [Do not delete pkg DB] (CUSTOM)
+    # Packarch Change [Do not delete pkg DB] (CUSTOM)
     #[[ -d "${pacstrap_dir}/var/lib/pacman/sync" ]] && find "${pacstrap_dir}/var/lib/pacman/sync" -delete
 
     # Delete pacman package cache
@@ -358,7 +358,7 @@ _make_packages() {
 
     # Unset TMPDIR to work around https://bugs.archlinux.org/task/70580
 
-    # Archcraft Change [-i] (CUSTOM)
+    # Packarch Change [-i] (CUSTOM)
     if [[ "${quiet}" = "y" ]]; then
         env -u TMPDIR pacstrap -C "${work_dir}/${buildmode}.pacman.conf" -i -c -G -M -- "${pacstrap_dir}" "${buildmode_pkg_list[@]}" &>/dev/null
     else
@@ -408,7 +408,7 @@ _make_customize_airootfs() {
         _msg_info "Done!"
     fi
 
-    # Archcraft Change [Run script right before generating sfs image] (CUSTOM)
+    # Packarch Change [Run script right before generating sfs image] (CUSTOM)
 	# START : (CUSTOM) : customize_sfs.sh
     if [[ -e "${pacstrap_dir}/root/customize_sfs.sh" ]]; then
         _msg_info "Running customize_sfs.sh in '${pacstrap_dir}' chroot..."
