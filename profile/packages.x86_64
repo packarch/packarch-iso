@@ -38,7 +38,7 @@ gpart
 gpm
 gptfdisk
 #grml-zsh-config
-#grub
+grub
 hdparm
 hyperv
 intel-ucode
@@ -132,13 +132,7 @@ zsh
 ## Bootloader ------------------------------
 os-prober
 lsb-release
-packarch/grub
-packarch-hooks-grub
-packarch-grub-theme
-
-## Splash Screen ------------------------------
-packarch/plymouth
-packarch-plymouth-theme
+grub
 
 ## Packarch Specific ------------------------------
 packarch-hooks

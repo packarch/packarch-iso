@@ -14,7 +14,6 @@ ln -sf /usr/share/zoneinfo/Europe/Paris /etc/localtime
 
 ## Modify /etc/mkinitcpio.conf file
 sed -i '/etc/mkinitcpio.conf' \
-	-e "s/base udev/base udev plymouth/g" \
 	-e "s/#COMPRESSION=\"zstd\"/COMPRESSION=\"zstd\"/g"
 
 ## Fix Initrd Generation in Installed System
