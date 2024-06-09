@@ -132,7 +132,6 @@ zsh
 ## Bootloader ------------------------------
 os-prober
 lsb-release
-grub
 
 ## Packarch Specific ------------------------------
 packarch-hooks
