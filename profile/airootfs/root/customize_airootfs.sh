@@ -122,6 +122,9 @@ if [[ -d "$gndir" ]]; then
 	rm -rf "$gndir"
 fi
 
+## Open Geany in new instance
+sed -i -e 's|Exec=geany %F|Exec=geany -i %F|g' /usr/share/applications/geany.desktop
+
 ## -------------------------------------------------------------- ##
 
 ## Hide Unnecessary Apps
