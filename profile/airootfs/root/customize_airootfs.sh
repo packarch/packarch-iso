@@ -70,6 +70,7 @@ systemctl enable autofs.service
 gpasswd -a liveuser autologin
 sed -i -e 's|#autologin-user=|autologin-user=liveuser|g'           /etc/lightdm/lightdm.conf
 sed -i -e 's|#autologin-user-timeout=0|autologin-user-timeout=0|g' /etc/lightdm/lightdm.conf
+sed -i -e 's|#greeter-setup-script=|greeter-setup-script=/usr/bin/numlockx on|g' /etc/lightdm/lightdm.conf
 
 sed -i -e 's|user-session=default|user-session=openbox|g' /etc/lightdm/lightdm.conf
 sed -i -e 's|#greeter-session=example-gtk-gnome|greeter-session=lightdm-gtk-greeter|g' /etc/lightdm/lightdm.conf

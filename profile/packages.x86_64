@@ -241,6 +241,7 @@ kvantum-qt5
 ## Display Manager ------------------------------
 lightdm
 lightdm-gtk-greeter
+numlockx
 
 ## Desktop ------------------------------
 
@@ -310,6 +311,7 @@ yad
 
 # WMs
 packarch-openbox-premium
+packarch-bspwm-premium
 
 # Packarch Packages
 packarch-rmatrix
@@ -413,6 +415,7 @@ mkinitcpio-firmware
 networkmanager-dmenu-git
 obmenu-generator
 perl-linux-desktopfiles
+waypaper
 xfce-polkit
 yay
 
