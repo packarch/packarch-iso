@@ -334,6 +334,7 @@ packarch-config-geany
 packarch-config-smplayer
 packarch-config-music
 packarch-config-qt
+packarch-config-waypaper
 packarch-hooks-extra
 packarch-hooks-zsh
 
