@@ -14,7 +14,7 @@ configuration {
 	scroll-method: 0;
 	normalize-match: true;
 	show-icons: true;
-	icon-theme: "Zafiro";
+	icon-theme: "Numix-Apps";
 /*	cache-dir: ;*/
 	steal-focus: false;
 /*	dpi: -1;*/
@@ -179,7 +179,7 @@ configuration {
 	ml-row-right: "ScrollRight";
 	ml-row-up: "ScrollUp";
 	ml-row-down: "ScrollDown";
-	me-select-entry: "";
-	me-accept-entry: "MousePrimary";
-	me-accept-custom: "Control+MouseDPrimary";
+	me-select-entry: "MousePrimary";
+	me-accept-entry: "!MousePrimary";
+	me-accept-custom: "!Control+MousePrimary";
 }
