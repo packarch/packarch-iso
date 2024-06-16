@@ -74,7 +74,7 @@ sed -i -e 's|#greeter-setup-script=|greeter-setup-script=/usr/bin/numlockx on|g'
 
 sed -i -e 's|user-session=default|user-session=openbox|g' /etc/lightdm/lightdm.conf
 sed -i -e 's|#greeter-session=example-gtk-gnome|greeter-session=lightdm-gtk-greeter|g' /etc/lightdm/lightdm.conf
-sed -i -e 's|#theme-name=|theme-name=Nordic|g' /etc/lightdm/lightdm-gtk-greeter.conf
+sed -i -e 's|#theme-name=|theme-name=Kripton|g' /etc/lightdm/lightdm-gtk-greeter.conf
 systemctl enable lightdm.service
 
 ## Set zsh as default shell for new user
