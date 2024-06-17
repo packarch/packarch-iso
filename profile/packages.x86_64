@@ -38,7 +38,7 @@ gpart
 gpm
 gptfdisk
 #grml-zsh-config
-grub
+#grub
 hdparm
 hyperv
 intel-ucode
@@ -130,6 +130,9 @@ xl2tpd
 zsh
 
 ## Bootloader ------------------------------
+packarch/grub
+packarch-hooks-grub
+packarch-grub-theme
 os-prober
 lsb-release
 
@@ -271,6 +274,7 @@ ncmpcpp
 mplayer
 
 # Utilities
+picom
 acpi
 cairo-dock
 cairo-dock-plug-ins
@@ -407,8 +411,8 @@ nethogs
 ncdu
 
 ## AUR Packages
-picom-ftlabs-git
 betterlockscreen
+cava
 cavalier
 downgrade
 gtk3-nocsd-git
