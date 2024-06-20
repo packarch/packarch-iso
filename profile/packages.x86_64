@@ -333,7 +333,7 @@ packarch-omz
 packarch-arandr
 packarch-randr
 packarch-scripts
-packarch-config-cavalier
+packarch-config-cava
 packarch-config-geany
 packarch-config-smplayer
 packarch-config-music
@@ -413,7 +413,6 @@ ncdu
 ## AUR Packages
 betterlockscreen
 cava
-cavalier
 downgrade
 gtk3-nocsd-git
 i3lock-color
