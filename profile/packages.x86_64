@@ -253,8 +253,7 @@ alacritty
 xfce4-terminal
 
 # Apps
-vivaldi
-vivaldi-ffmpeg-codecs
+firefox
 geany
 geany-plugins
 thunar
